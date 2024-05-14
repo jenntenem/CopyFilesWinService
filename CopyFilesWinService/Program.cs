@@ -11,13 +11,13 @@ namespace CopyFilesWinService
     {
         /// <summary>
         /// The main entry point for the application.
-        /// </summary>
+        /// </summary>                                                                                  
         static void Main()
         {
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new Service1()
+                new FileService()
             };
             ServiceBase.Run(ServicesToRun);
         }

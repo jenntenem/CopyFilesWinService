@@ -1,6 +1,6 @@
 ﻿namespace CopyFilesWinService
 {
-    partial class Service1
+    partial class FileService
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,10 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.ServiceName = "Service1";
+            this.stLapse = new System.Timers.Timer();
+            ((System.ComponentModel.ISupportInitialize)(this.stLapse)).BeginInit();
+            // 
+            // stLapse
+            // 
+            this.stLapse.Enabled = true;
+            this.stLapse.Interval = 30000D;
+            this.stLapse.Elapsed += new System.Timers.ElapsedEventHandler(this.stLapse_Elapsed);
+            // 
+            // FileCopy
+            //
+            this.ServiceName = "FileCopy";
+            ((System.ComponentModel.ISupportInitialize)(this.stLapse)).EndInit();
+
         }
 
         #endregion
+
+        private System.Timers.Timer stLapse;
     }
 }
